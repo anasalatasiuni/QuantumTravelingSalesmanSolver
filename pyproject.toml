@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "quantumtravelingsalesmansolver"
+version = "0.1.0"
+description = ""
+authors = ["Murhaf Alawir <94635412+thecarrot123@users.noreply.github.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^2.0.1"
+dwave-ocean-sdk = "^7.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
