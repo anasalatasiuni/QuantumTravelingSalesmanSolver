@@ -4,6 +4,7 @@ from dwave.system.composites import EmbeddingComposite
 from dwave.system import DWaveSampler
 import dwave.inspector
 import numpy as np
+from dwave.system import LeapHybridSampler
 from plot import plot_solution, plot_problem
 
 
@@ -113,7 +114,7 @@ def score(M, X):
     return ans, path
 
 
-def solve(best_energy):
+def qbu_solve(best_energy):
     n, _ = M.shape
     sampler = EmbeddingComposite(DWaveSampler())
     t0 = time.perf_counter()
@@ -149,6 +150,39 @@ def solve(best_energy):
             
     return best_energy
 
+def hybrid_solve(best_energy):
+    n, _ = M.shape
+    sampler = LeapHybridSampler()
+    t0 = time.perf_counter()
+    sampleset = sampler.sample_qubo(Q,time_limit=3)
+    t1 = time.perf_counter()
+    problem_id = sampleset.info['problem_id']
+
+    for e in sampleset.data(sorted_by='energy'):
+        sample = e.sample
+        energy = e.energy
+        num_occurrences = e.num_occurrences
+        
+        if best_energy <= energy:
+            return best_energy
+
+        with open(out_file, 'w') as f:
+            X = build_solution(sample)
+            if is_valid_solution(X):
+                f.write(f"Problem Id: {problem_id}\n")
+                best_energy = energy
+                cost, path = score(M, X)
+                f.write(f"Solution:\n")
+                f.write(f"{X}\n")
+                f.write(f"Score: {cost}\n")
+                f.write(f"{sample}\n")
+                f.write(f"energy: {energy}\n")
+                f.write(f"num_occurrences: {num_occurrences}\n")                     
+                f.write(f"Time: {t1-t0:0.4f} s\n")
+                break
+            
+    return best_energy
+
 best_energy = 1e9
-for _ in range(4):
-    best_energy = solve(best_energy)
+for _ in range(1):
+    best_energy = hybrid_solve(best_energy)
