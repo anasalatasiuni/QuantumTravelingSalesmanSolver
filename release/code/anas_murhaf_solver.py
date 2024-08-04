@@ -7,7 +7,7 @@ import dwave.inspector
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
-
+from plot import plot_solution
 
 
 
@@ -161,3 +161,4 @@ with open(out_file, 'w') as f:
         f.write("did not find any solution\n")
         f.write(f"chain break fraction: {chain_break_fraction}\n")
         
+plot_solution( n, path , M)

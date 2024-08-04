@@ -2,22 +2,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 import networkx as nx
 
-latest_adj_matrix = np.array(
-[[0, 0, 1, 0, 0, 0, 0, 0,],
- [0, 0, 0, 0, 1, 0, 0, 0,],
- [0, 0, 0, 1, 0, 0, 0, 0,],
- [0, 0, 0, 0, 0, 0, 1, 0,],
- [0, 0, 0, 0, 0, 1, 0, 0,],
- [1, 0, 0, 0, 0, 0, 0, 0,],
- [0, 1, 0, 0, 0, 0, 0, 0,],
- [0, 0, 0, 0, 0, 0, 0, 1,],])
+def plot_solution( n , path , M):
+    adj_matrix = np.zeros((n, n), dtype='int')
+    for i in range(len(path) - 1):
+        adj_matrix[ path[ i ] ][path[ i + 1 ] ] = M[ path[ i ] ][ path[ i + 1 ] ]
 
-# Create a directed graph from the latest adjacency matrix
-G_latest = nx.from_numpy_array(latest_adj_matrix, create_using=nx.DiGraph)
+    G_latest = nx.from_numpy_array(adj_matrix, create_using=nx.DiGraph)
+    nodes_pos = nx.kamada_kawai_layout(G_latest)
 
-# Draw the graph
-plt.figure(figsize=(8, 8))
-pos = nx.spring_layout(G_latest)
-nx.draw(G_latest, pos, with_labels=True, node_color='lightblue', node_size=2000, edge_color='gray', arrowsize=20)
-plt.title("Graph Representation from Latest Adjacency Matrix")
-plt.show()
+    scale_factor = 2
+    pos_scaled = {
+        node: (scale_factor * x if x < 4 else x, scale_factor * y if y < 4 else y)
+        for node, (x, y) in nodes_pos.items()
+    }
+    # Extract edge weights for plotting
+    edge_weights = nx.get_edge_attributes(G_latest, 'weight')
+
+    plt.figure(figsize=(10, 10))
+    nx.draw(G_latest, pos_scaled, with_labels=True, node_color='skyblue', node_size=2000, edge_color='gray', arrows=True, arrowsize=20)
+    nx.draw_networkx_edge_labels(G_latest, pos_scaled, edge_labels=edge_weights, font_color='red')
+    plt.title("Solution:")
+    plt.show()
