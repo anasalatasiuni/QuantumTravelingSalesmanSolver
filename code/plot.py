@@ -22,6 +22,7 @@ def plot_solution( n , path , M):
     nx.draw(G_latest, pos_scaled, with_labels=True, node_color='skyblue', node_size=2000, edge_color='gray', arrows=True, arrowsize=20)
     nx.draw_networkx_edge_labels(G_latest, pos_scaled, edge_labels=edge_weights, font_color='red')
     plt.title("Solution:")
+    plt.savefig('solution.png', format='png', dpi=300)
     plt.show()
     
     
@@ -39,8 +40,9 @@ def plot_problem(M):
     edge_weights = nx.get_edge_attributes(G_latest, 'weight')
 
 
-    plt.figure(figsize=(12, 12))
+    plt.figure(figsize=(10, 10))
     nx.draw(G_latest, pos_scaled, with_labels=True, node_color='skyblue', node_size=2000, edge_color='gray', arrows=True, arrowsize=20)
     nx.draw_networkx_edge_labels(G_latest, pos_scaled, edge_labels=edge_weights, font_color='red')
     plt.title("Problem:")
     plt.show()
+    plt.savefig('problem.png', format='png', dpi=300)
