@@ -1,0 +1,6 @@
+Problem Id: 902afb55-acca-4362-8516-f8c2a435f097
+chain strength: 44.5
+lagrange multiplier: 9.0
+Time: 2.0182 s
+did not find any solution
+chain break fraction: 0.0011111111111111111

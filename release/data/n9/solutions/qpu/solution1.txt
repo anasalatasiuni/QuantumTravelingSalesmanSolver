@@ -1,0 +1,6 @@
+Problem Id: be4bf34f-bc59-41be-b55c-cb12ffc83491
+chain strength: 44.0
+lagrange multiplier: 9.0
+Time: 1.2143 s
+did not find any solution
+chain break fraction: 0.0022222222222222227

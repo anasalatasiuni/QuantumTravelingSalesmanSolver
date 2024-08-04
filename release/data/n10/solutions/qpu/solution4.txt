@@ -1,0 +1,6 @@
+Problem Id: cb2db6e2-8a4c-4d76-b5d7-a7770e4b3388
+chain strength: 60.0
+lagrange multiplier: 10.0
+Time: 3.1086 s
+did not find any solution
+chain break fraction: 0.002444444444444445
