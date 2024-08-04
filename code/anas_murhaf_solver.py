@@ -3,9 +3,8 @@ import time
 from dwave.system.composites import EmbeddingComposite
 from dwave.system import DWaveSampler
 import dwave.inspector
-
 import numpy as np
-from plot import plot_solution
+from plot import plot_solution, plot_problem
 
 
 
@@ -63,9 +62,9 @@ def build_objective_matrix():
 
 
 Q = build_objective_matrix()
-np.set_printoptions(threshold=sys.maxsize)
-with open("Q.txt", 'w') as f:
-    f.write(f"{Q}\n")
+#np.set_printoptions(threshold=sys.maxsize)
+    
+lagrange_multiplier = np.max(np.abs(M))
 
 def is_valid_solution(X):
     n, _ = X.shape
