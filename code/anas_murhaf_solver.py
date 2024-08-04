@@ -4,10 +4,8 @@ from dwave.embedding.chain_strength import scaled
 from dwave.system.composites import EmbeddingComposite
 from dwave.system.samplers import DWaveSampler
 import dwave.inspector
-import matplotlib.pyplot as plt
-import networkx as nx
 import numpy as np
-from plot import plot_solution
+from plot import plot_solution, plot_problem
 
 
 
@@ -158,5 +156,6 @@ with open(out_file, 'w') as f:
         chain_break_fraction = np.sum(sampleset.record.chain_break_fraction)/num_samples
         f.write("did not find any solution\n")
         f.write(f"chain break fraction: {chain_break_fraction}\n")
-        
+
 plot_solution( n, path , M)
+plot_problem(M)
