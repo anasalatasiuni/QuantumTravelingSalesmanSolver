@@ -65,9 +65,7 @@ def build_objective_matrix():
 
 
 Q = build_objective_matrix()
-np.set_printoptions(threshold=sys.maxsize)
-with open("Q.txt", 'w') as f:
-    f.write(f"{Q}\n")
+#np.set_printoptions(threshold=sys.maxsize)
     
 lagrange_multiplier = np.max(np.abs(M))
 
