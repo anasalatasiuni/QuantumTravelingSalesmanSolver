@@ -42,5 +42,5 @@ def plot_problem(M):
     plt.figure(figsize=(12, 12))
     nx.draw(G_latest, pos_scaled, with_labels=True, node_color='skyblue', node_size=2000, edge_color='gray', arrows=True, arrowsize=20)
     nx.draw_networkx_edge_labels(G_latest, pos_scaled, edge_labels=edge_weights, font_color='red')
-    plt.title("Solution:")
+    plt.title("Problem:")
     plt.show()
