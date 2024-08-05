@@ -37,8 +37,8 @@ if __name__ == "__main__":
 
     # Define the directories and solver script path
     problem_directory = f"../data/n{n}/problems"
-    solution_directory = f"../data/n{n}/solutions/anas_murhaf_solutions"
-    solver_script_path = "anas_murhaf_solver.py"
+    solution_directory = f"../data/n{n}/solutions/backtrack"
+    solver_script_path = "backtrack.py"
     
     # Check if the problem directory exists
     if not os.path.exists(problem_directory):

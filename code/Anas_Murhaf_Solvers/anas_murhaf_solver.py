@@ -5,8 +5,6 @@ from dwave.system import DWaveSampler
 import dwave.inspector
 import numpy as np
 from dwave.system import LeapHybridSampler
-from plot import plot_solution, plot_problem
-
 
 
 in_file = sys.argv[1]

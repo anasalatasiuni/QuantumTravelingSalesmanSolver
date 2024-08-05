@@ -43,7 +43,7 @@ def plot_results(n, our_brute_force_results, qpu_our_results, dwave_solver_resul
     plt.show()
 
 # Data for n = 8
-our_brute_force_results_8 = [54, 54, 41, 49, 40, 52, 51, 47]
+our_brute_force_results_8 = [54.0, 54.0, 41.0, 49.0, 40.0, 52.0, 51.0, 47.0]
 qpu_our_results_8 = [54.0, 54.0, 41.0, 49.0, 40.0, 52.0, 51.0, 47.0]
 dwave_solver_results_8 = [54.0, 54.0, 41.0, 49.0, 40.0, 52.0, 51.0, 47.0]
 brute_force_results_8 = [54, 54, 41, 49, 40, 52, 51, 47]
@@ -51,7 +51,7 @@ opt2_results_8 = [54, 54, 44, 49, 40, 52, 59, 50]
 qpu_original_results_8 = [61, 68, 53, 55, 54, 58, 63, 59]
 
 # Data for n = 9
-our_brute_force_results_9 = [54, 54, 41, 49, 40, 52, 51, 47]
+our_brute_force_results_9 = [63.0, 57.0, 54.0, 64.0, 64.0, 54.0, 61.0, 71.0]
 qpu_our_results_9 = [63.0, 57.0, 54.0, 64.0, 64.0, 54.0, 61.0, 71.0]
 dwave_solver_results_9 = [63.0, 60.0, 56.0, 64.0, 66.0, 54.0, 61.0, 72.0]
 brute_force_results_9 = [67, 58, 56, 65, 66, 57, 62, 72]
@@ -59,7 +59,7 @@ opt2_results_9 = [70.0, 57.0, 54.0, 64.0, 64.0, 59.0, 70.0, 71.0]
 qpu_original_results_9 = [0, 90, 0, 0, 78, 63, 0, 0]
 
 # Data for n = 10
-our_brute_force_results_10 = [54, 54, 41, 49, 40, 52, 51, 47]
+our_brute_force_results_10 = [68.0, 56.0, 63.0, 67.0, 67.0, 56.0, 65.0, 63.0]
 qpu_our_results_10 = [68.0, 57.0, 63.0, 67.0, 70.0, 56.0, 65.0, 63.0]
 dwave_solver_results_10 = [71.0, 63.0, 67.0, 71.0, 74.0, 61.0, 72.0, 70.0]
 brute_force_results_10 = [69.0, 57.0, 64.0, 68.0, 69.0, 57.0, 66.0, 64.0]
