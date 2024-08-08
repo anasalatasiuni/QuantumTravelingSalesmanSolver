@@ -14,4 +14,3 @@ Score: 71.0
 energy: -473.0
 num_occurrences: 1
 chain break fraction: 0.0
-Time: 11.3806 s
