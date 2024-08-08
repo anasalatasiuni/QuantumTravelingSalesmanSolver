@@ -1,0 +1,17 @@
+Problem Id: c2d57f35-e93d-4018-8300-2b4f0a9c2934
+Solution:
+[[1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 1. 0.]]
+Score: 66.0
+{0: np.int8(0), 1: np.int8(0), 2: np.int8(0), 3: np.int8(0), 4: np.int8(1), 5: np.int8(0), 6: np.int8(0), 7: np.int8(0), 8: np.int8(1), 9: np.int8(0), 10: np.int8(0), 11: np.int8(0), 12: np.int8(0), 13: np.int8(0), 14: np.int8(0), 15: np.int8(0), 16: np.int8(0), 17: np.int8(1), 18: np.int8(0), 19: np.int8(0), 20: np.int8(0), 21: np.int8(0), 22: np.int8(0), 23: np.int8(0), 24: np.int8(0), 25: np.int8(0), 26: np.int8(0), 27: np.int8(0), 28: np.int8(0), 29: np.int8(1), 30: np.int8(0), 31: np.int8(0), 32: np.int8(0), 33: np.int8(0), 34: np.int8(0), 35: np.int8(0), 36: np.int8(0), 37: np.int8(0), 38: np.int8(0), 39: np.int8(1), 40: np.int8(0), 41: np.int8(0), 42: np.int8(1), 43: np.int8(0), 44: np.int8(0), 45: np.int8(0), 46: np.int8(0), 47: np.int8(0), 48: np.int8(0), 49: np.int8(0), 50: np.int8(0), 51: np.int8(1), 52: np.int8(0), 53: np.int8(0), 54: np.int8(0), 55: np.int8(0), 56: np.int8(0), 57: np.int8(0), 58: np.int8(0), 59: np.int8(0), 60: np.int8(0), 61: np.int8(0), 62: np.int8(1), 63: np.int8(0)}
+energy: -510.0
+num_occurrences: 1
+chain break fraction: 0.0
+Time: 28.0336 s

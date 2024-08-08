@@ -1,11 +1,10 @@
 import sys
-import time
 from dwave.system.composites import EmbeddingComposite
 from dwave.system import DWaveSampler
 import dwave.inspector
 import numpy as np
 from dwave.system import LeapHybridSampler
-
+from plot import plot_problem, plot_solution
 
 in_file = sys.argv[1]
 out_file = sys.argv[2]
@@ -115,9 +114,7 @@ def score(M, X):
 def qbu_solve(best_energy):
     n, _ = M.shape
     sampler = EmbeddingComposite(DWaveSampler())
-    t0 = time.perf_counter()
     sampleset = sampler.sample_qubo(Q, num_reads=num_samples)
-    t1 = time.perf_counter()
     dwave.inspector.show(sampleset)
     problem_id = sampleset.info['problem_id']
 
@@ -142,18 +139,16 @@ def qbu_solve(best_energy):
                 f.write(f"{sample}\n")
                 f.write(f"energy: {energy}\n")
                 f.write(f"num_occurrences: {num_occurrences}\n")            
-                f.write(f"chain break fraction: {chain_break_fraction}\n")            
-                f.write(f"Time: {t1-t0:0.4f} s\n")
+                f.write(f"chain break fraction: {chain_break_fraction}\n")
                 break
             
     return best_energy
 
 def hybrid_solve(best_energy):
     n, _ = M.shape
+    plot_problem(M)
     sampler = LeapHybridSampler()
-    t0 = time.perf_counter()
     sampleset = sampler.sample_qubo(Q,time_limit=3)
-    t1 = time.perf_counter()
     problem_id = sampleset.info['problem_id']
 
     for e in sampleset.data(sorted_by='energy'):
@@ -170,13 +165,13 @@ def hybrid_solve(best_energy):
                 f.write(f"Problem Id: {problem_id}\n")
                 best_energy = energy
                 cost, path = score(M, X)
+                plot_solution(n,path,M)
                 f.write(f"Solution:\n")
                 f.write(f"{X}\n")
                 f.write(f"Score: {cost}\n")
                 f.write(f"{sample}\n")
                 f.write(f"energy: {energy}\n")
-                f.write(f"num_occurrences: {num_occurrences}\n")                     
-                f.write(f"Time: {t1-t0:0.4f} s\n")
+                f.write(f"num_occurrences: {num_occurrences}\n")
                 break
             
     return best_energy

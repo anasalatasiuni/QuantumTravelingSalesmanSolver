@@ -1,4 +1,5 @@
 import os
+import sys
 
 # Function to parse the score from a file
 def parse_score_from_file(filename):
@@ -27,11 +28,29 @@ def parse_scores_from_files(directory, start=1, end=10):
 
 # Main execution
 if __name__ == "__main__":
-    # Allow user to input the directory path
-    directory = input("Enter the path to the directory containing the solution files: ")
+    
+    if len(sys.argv) != 3:
+        print("")
+        print("""Usage: python3 parse_score.py <n> <solver>
+          <n>: The problem set size.
+          <solver>: The problem solver to parse.
+          This script expects the following directory structure:
+               ../../data/n<n>/solutions/<solver>/solutionX.txt
+        \nExample:
+        python3 parse_score.py 8 backtrack
+        This will parse scores in ../../data/n8/solutions/backtrack/""")
+        sys.exit(1)
+    try:
+        n = int(sys.argv[1])
+    except ValueError:
+        print("Error: <n> must be an integer")
+        sys.exit(1)
+    
+
+    directory = f"../../data/n{n}/solutions/{sys.argv[2]}"
     
     start_file = 1
-    end_file = 8  # Adjust this to the number of files you want to parse
+    end_file = 8
     
     # Ensure the directory exists
     if os.path.isdir(directory):

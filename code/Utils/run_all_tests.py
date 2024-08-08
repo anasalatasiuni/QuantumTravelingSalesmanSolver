@@ -20,13 +20,13 @@ def run_solver_on_problems(problem_dir, solution_dir, solver_script):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("""Usage: python3 run_anas_murhaf_solutions.py <n>
+        print("""Usage: python3 run_all_tests.py <n>
           <n>: The problem set size. This script expects the following directory structure:
                ../data/n<n>/problems/problemX.txt
-               ../data/n<n>/solutions/anas_murhaf_solutions/solutionX.txt
+               ../data/n<n>/solutions/global1a1_hqpu_solutions/solutionX.txt
         \nExample:
-        python3 run_anas_murhaf_solutions.py 8
-        This will process problems in ../data/n8/problems/ and store solutions in ../data/n8/solutions/anas_murhaf_solutions/""")
+        python3 run_global1a1_hqpu_solutions.py 8
+        This will process problems in ../data/n8/problems/ and store solutions in ../data/n8/solutions/global1a1_hqpu_solutions/""")
         sys.exit(1)
         
     try:
@@ -36,9 +36,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # Define the directories and solver script path
-    problem_directory = f"../data/n{n}/problems"
-    solution_directory = f"../data/n{n}/solutions/backtrack"
-    solver_script_path = "backtrack.py"
+    problem_directory = f"../../data/n{n}/problems"
+    solution_directory = f"../../data/n{n}/solutions/global1a1_hqpu_solutions"
+    solver_script_path = "../Global1A1_Solvers/global1a1_solver.py"
     
     # Check if the problem directory exists
     if not os.path.exists(problem_directory):
