@@ -1,7 +1,49 @@
+#!/usr/bin/env python
+"""This script plots the results of different algorithms for solving the Traveling Salesman Problem (TSP).
+
+It generates bar plots to compare the performance of various algorithms, including new and old backtracking, quantum, brute force, and 2-Opt methods, across different problem sizes (n). 
+The results are saved as PNG images.
+
+The script requires Matplotlib and NumPy to be installed.
+
+The `plot_results` function can be used as follows:
+1. `plot_results(n, new_backtrack, new_quantum_results, dwave_quantum_results, brute_force_results, opt2_results, old_quantum_results, filename)` - Plots and saves a comparison of algorithm results for a given problem size.
+
+Example usage:
+$ python plot_results.py
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 
+__author__ = "Murhaf Alawir, Anas Alatasi"
+__copyright__ = "Global1A1"
+__credits__ = ["Murhaf Alawir", "Anas Alatasi"]
+__license__ = "Apache 2.0"
+__version__ = "1.0.0"
+__maintainer__ = "Murhaf Alawir"
+__email__ = "m.alawir@innopolis.university"
+__status__ = "Staging"
+
 def plot_results(n, new_backtrack, new_quantum_results, dwave_quantum_results, brute_force_results, opt2_results, old_quantum_results, filename):
+    """Plots the results of various TSP algorithms and saves the plot as a PNG file.
+
+    This function generates a bar plot comparing the performance of different algorithms across multiple problems. 
+    It creates bars for each algorithm and adjusts their positions to prevent overlap. The plot is saved with a specified filename.
+
+    Args:
+        n (int): The number of nodes in the problem. This determines the number of problem instances.
+        new_backtrack (list): Results of the new backtracking algorithm.
+        new_quantum_results (list): Results of the new quantum algorithm.
+        dwave_quantum_results (list): Results of the D-Wave quantum algorithm.
+        brute_force_results (list): Results of the old brute force algorithm.
+        opt2_results (list): Results of the old 2-Opt algorithm.
+        old_quantum_results (list): Results of the old quantum algorithm.
+        filename (str): The filename for saving the plot.
+
+    Saves:
+        filename: A bar plot comparing the results of different TSP algorithms.
+    """
     # Problem indices
     problems = np.arange(1, len(new_backtrack) + 1)
     bar_width = 0.15
