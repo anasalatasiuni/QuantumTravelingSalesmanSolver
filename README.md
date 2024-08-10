@@ -77,8 +77,8 @@ This command will run the specified solver on the given problem file and output 
 The **Global1A1 Solvers** directory contains the following algorithms, developed as part of this project:
 
 - `backtrack.py`: A classical backtracking solver for TSP.
-- `dwave_solver.py`: A quantum annealing-based solver using D-Wave's API.
-- `eqats_solver.py`: An advanced quantum-inspired algorithm for solving TSP.
+- `dwave_solver.py`: A quantum annealing-based solver using a QUBO matrix provided by D-Wave's API.
+- `eqats_solver.py`: Our enhanced quantum annealing TSP solver.
 - `plot.py`: Utility for plotting solution paths and results.
 
 ### Jain Solvers
@@ -87,7 +87,7 @@ The **Jain Solvers** directory contains algorithms contributed by Siddharth Jain
 
 - `2opt-solver.py`: A classical optimization algorithm for TSP.
 - `brute-force-solver.py`: A brute-force approach to finding the optimal TSP solution.
-- `my-quantum-solver.py`: A custom quantum-inspired TSP solver.
+- `my-quantum-solver.py`: A quantum annealing TSP solver provided by Siddharth Jain.
 
 ## Data
 
